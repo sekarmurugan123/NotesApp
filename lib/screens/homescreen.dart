@@ -200,16 +200,17 @@ class _HomescreenState extends State<Homescreen> {
      final notes=snapshot.data!;
      for(var note in notes){
        selectedDeleteIds[note.id]=selectedDeleteIds[note.id]??false;
+       notes.sort((a,b){
+         if(!a.isPinned && b.isPinned){
+           return 1;
+         }
+         if(a.isPinned && !b.isPinned){
+           return -1;
+         }
+         return 0;
+       });
      }
-     notes.sort((a,b){
-       if(!a.isPinned && b.isPinned){
-         return 1;
-       }
-       if(a.isPinned && !b.isPinned){
-         return -1;
-       }
-       return 0;
-     });
+
      return ListView.builder(itemCount:notes.length,
          itemBuilder: (context,index){
           final note=notes[index];

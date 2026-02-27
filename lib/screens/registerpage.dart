@@ -162,6 +162,7 @@ toggleEye(){
                       Expanded(
                         child: Divider(
                           endIndent: 10,
+
                         ),
                       )
                     ],
@@ -171,12 +172,11 @@ toggleEye(){
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children:
                       images.map((imagePath)=>Socialbutton(imagePath: imagePath)).toList()
-
                   ),
 
                   Spacer()
               ],
-                        ),
+              ),
             ),
         ),
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
+
 import 'package:ui_project/buttons/buttonpage.dart';
 import 'package:ui_project/repository/auth_repo.dart';
 import 'package:ui_project/repository/user_repo.dart';
@@ -20,9 +20,7 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin {
-  final SecureStorageService _secureStorageService=SecureStorageService();
    final UserService userService=UserService();
-   TextEditingController pincontroller=TextEditingController();
    late AnimationController controller;
    late Animation<Offset> animation;
    final LocalStorageService _localStorageService=LocalStorageService();
@@ -149,12 +147,8 @@ bool isRound=false;
                        );
                      },
                    )
-
                  ],
-
                ),
-
-
             ],
 
             ),
